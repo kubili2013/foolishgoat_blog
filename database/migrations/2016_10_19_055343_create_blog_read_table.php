@@ -17,7 +17,7 @@ class CreateBlogReadTable extends Migration
             $table->increments('id');
             $table->string('ip',32);
             $table->integer('blog_id')->unsigned();
-            $table->foreign('blog_id')->references('id')->on('blog');
+            $table->foreign('blog_id')->references('id')->on('blogs');
             $table->timestamps();
         });
     }

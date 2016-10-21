@@ -32,10 +32,17 @@ Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 
 Route::get('/home', 'HomeController@index');
 
-
 Route::group(['middleware' => 'auth'], function () {
-
+    // 跳转新增博客页面
     Route::get('blog/add', 'BlogController@toAdd');
+    // 新增博客
     Route::post('blog/add', 'BlogController@add');
+    //
+    Route::get('blog/list', 'BlogController@toList');
+    //
+    Route::get('blog/view/{id}', 'BlogController@toList')->where('id', '[0-9]+');
+    Route::get('blog/delete/{id}', 'BlogController@deteleById')->where('id', '[0-9]+');
+    Route::get('blog/edit/{id}', 'BlogController@toEdit')->where('id', '[0-9]+');
+    Route::post('blog/edit/{id}', 'BlogController@edit')->where('id', '[0-9]+');
 
 });

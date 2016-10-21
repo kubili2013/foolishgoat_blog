@@ -12,7 +12,7 @@
 
     <!-- Styles -->
     <link href="/css/app.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="{{url('css/genericons.css')}}">
     <!-- Scripts -->
     <script>
         window.Laravel = <?php echo json_encode([
@@ -78,20 +78,21 @@
             </div>
         </nav>
         <div class="container">
+
             <div class="row">
                 <div class="col-md-3">
                     <div class="list-group" id="menu">
-                        <a href="#" class="list-group-item active">
+                        <a href="/blog/add" class="list-group-item {{ Request::path() == 'blog/add' ? 'active' : '' }}">
                             写文章
                         </a>
-                        <a href="#" class="list-group-item">文章列表</a>
-                        <a href="#" class="list-group-item">上传</a>
+                        <a href="/blog/list" class="list-group-item {{ Request::path() == 'blog/list' ? 'active' : '' }}">文章列表</a>
+                        <a href="/dustbin/list" class="list-group-item {{ Request::path() == 'dustbin/list' ? 'active' : '' }}">
+                            垃圾箱
+                        </a>
                     </div>
                 </div>
                 <div class="col-md-9">
-                    <div class="panel panel-default">
                     @yield('content')
-                    </div>
                 </div>
             </div>
         </div>
