@@ -1,19 +1,15 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
     <head>
-        <?php
-        $type = \App\Dictionary::where('code', 'type')->first();
-        $dists = \App\Dictionary::where('parent_id', $type->id)->get();
-        ?>
         <meta charset="utf-8">
         <meta content="">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="{{url('css/style.css')}}">
-        <link rel="stylesheet" href="{{url('css/genericons.css')}}">
-        <link rel="stylesheet" href="{{url('css/logo.css')}}">
-        <link rel="stylesheet" href="{{url('css/github-markdown.css')}}">
-        {{-- cdn引入jquery --}}
+        <link rel="stylesheet" href="http://localhost:8888/css/style.css">
+        <link rel="stylesheet" href="http://localhost:8888/css/genericons.css">
+        <link rel="stylesheet" href="http://localhost:8888/css/logo.css">
+        <link rel="stylesheet" href="http://localhost:8888/css/github-markdown.css">
+        
         <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
         <title>蠢羊小站</title>
     </head>
@@ -37,15 +33,78 @@
             </header>
             <nav class="menu" id="menu">
                 <ul>
-                    <li class="{{ Request::path() == '/' ? 'active' : '' }}"><a href="/" >主页</a></li>
-                    @foreach($dists as $dist)
-                        <li class="{{ Request::path() == 'type/'.$dist->id ? 'active' : '' }}"><a href="{{url('type/'.$dist->id)}}" >{{$dist->word}}</a></li>
-                    @endforeach
-                </ul>
+                    <li class=""><a href="/" >主页</a></li>
+                                            <li class=""><a href="http://localhost:8888/type/4" >视频</a></li>
+                                            <li class=""><a href="http://localhost:8888/type/5" >小说</a></li>
+                                            <li class=""><a href="http://localhost:8888/type/6" >下载</a></li>
+                                            <li class=""><a href="http://localhost:8888/type/7" >技术</a></li>
+                                            <li class=""><a href="http://localhost:8888/type/8" >关于我</a></li>
+                                    </ul>
             </nav>
         </div>
         <div class="container">
-            @yield('content')
+            <div class="content">
+    <footer class="footer clearfloat">
+        <div class="fieldcontainer">
+            <form action="http://localhost:8888" method="get">
+                <input type="text" name="str" id="str" class="searchfield" placeholder="Keywords..." value="" tabindex="1">
+                <button class="searchbtn" type="submit"><span class="genericon genericon-search"></span></button>
+            </form>
+        </div>
+    </footer>
+
+            <article  class="article">
+            <header class="">
+                <h2 class="">
+                    <a href="http://localhost:8888/16" rel="bookmark">关于怎么开发laravel</a>
+                </h2>
+            </header><!-- .entry-header -->
+
+            <div class="article-content">
+                <p>关于怎么开发laravel关于怎么开发laravel关于怎么开发laravel关于怎么开发laravel关于怎么开发laravel</p>
+                <p>
+                    <a href="http://localhost:8888/16" class="">继续阅读</a>
+                </p>
+            </div><!-- .entry-content -->
+
+            <footer class="">
+            <span class="">
+                <span class="genericon genericon-day"></span>
+
+                <time class="entry-date published" datetime="2016-10-24 02:16:36">2016-10-24</time>
+
+            </span>
+            <span class="">
+                <span class="author vcard">
+                    <span class="genericon genericon-user"></span>
+                    <a class="url fn n" href="/author">匠心</a>
+                </span>
+            </span>
+                <span class="">
+                <span class="genericon genericon-tag"></span>
+                <a href="type/7" rel="category tag">技术</a>
+            </span>
+                <span class="">
+                <span class="genericon genericon-star"></span>
+                <span>0</span>
+            </span>
+            </footer><!-- .entry-footer -->
+
+        </article>
+        <div class="page-switch clearfloat">
+        <div class="nextpage"><a href="">下一页<span class="genericon genericon-rightarrow"></span></a></div>
+        <div class="prepage"><a href=""><span class="genericon genericon-leftarrow"></span>上一页</a></div>
+    </div>
+    <footer class="footer" style="background:#fff;padding:2.5454% 9.0909%;">
+        <span>
+            <a href="http://www.miitbeian.gov.cn/" rel="nofollow" title="工业和信息化部ICP/IP地址/域名信息备案管理系统">粤ICP备16055652-2</a>
+        </span>
+
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="/">&nbsp;<span style="line-height:16px;">蠢羊小站</span></a>
+        </span>
+    </footer> <!-- .entry-footer -->
+</div>
         </div>
         <script>
             function removeLogoEyes(e){

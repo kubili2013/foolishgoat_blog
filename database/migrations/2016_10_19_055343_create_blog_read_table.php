@@ -16,7 +16,7 @@ class CreateBlogReadTable extends Migration
         Schema::create('blog_read', function (Blueprint $table) {
             $table->increments('id');
             $table->string('ip',32);
-            $table->integer('userid')->unsigned();
+            $table->integer('userid')->unsigned()->nullable();
             $table->integer('blogid')->unsigned();
             $table->foreign('userid')->references('id')->on('users');
             $table->foreign('blogid')->references('id')->on('blogs');

@@ -10,19 +10,27 @@
             </form>
         </div>
     </footer>
-
+    @if(count($blogs) < 1)
+        <article  class="footer">
+            <header class="">
+                <h2 class="">
+                    （*+﹏+*）!! 暂时没有啥可看的!<br/>
+                </h2>
+            </header>
+        </article>
+    @endif
     @foreach($blogs as $blog)
         <article  class="article">
             <header class="">
                 <h2 class="">
-                    <a href="{{url('/'+$blog['id'])}}" rel="bookmark">{{$blog['title']}}</a>
+                    <a href="{{url('view/'.$blog['id'])}}" rel="bookmark">{{$blog['title']}}</a>
                 </h2>
             </header><!-- .entry-header -->
 
             <div class="article-content">
                 <p>{{$blog['introduction']}}</p>
                 <p>
-                    <a href="#" class="">继续阅读</a>
+                    <a href="{{url('view/'.$blog['id'])}}" class="">继续阅读</a>
                 </p>
             </div><!-- .entry-content -->
 
@@ -33,15 +41,15 @@
                 <time class="entry-date published" datetime="{{$blog['created_at']}}">{{substr($blog['created_at'],0,10)}}</time>
 
             </span>
-                <span class="">
+            <span class="">
                 <span class="author vcard">
                     <span class="genericon genericon-user"></span>
-                    <a class="url fn n" href="http://foolishgoat.com/author">{{$blog['author']}}</a>
+                    <a class="url fn n" href="/author"><?php $user = \App\User::find($blog['author']); echo $user->name?></a>
                 </span>
             </span>
                 <span class="">
                 <span class="genericon genericon-tag"></span>
-                <a href="http://foolishgoat.com/category/technology/" rel="category tag">{{$blog['keywords']}}</a>
+                <a href="type/<?php $type = \App\Dictionary::find($blog['type']); echo $type->id; ?>" rel="category tag"><?php echo $type->word; ?></a>
             </span>
                 <span class="">
                 <span class="genericon genericon-star"></span>
@@ -52,8 +60,20 @@
         </article>
     @endforeach
     <div class="page-switch clearfloat">
-        <div class="nextpage"><a href="{{$blogs->nextPageUrl()}}">下一页<span class="genericon genericon-rightarrow"></span></a></div>
-        <div class="prepage"><a href="{{$blogs->previousPageUrl()}}"><span class="genericon genericon-leftarrow"></span>上一页</a></div>
+        @if($blogs->nextPageUrl() != "")
+            <div class="nextpage"><a href="{{$blogs->nextPageUrl()}}">下一页<span class="genericon genericon-rightarrow"></span></a></div>
+        @else
+            @if($blogs->previousPageUrl() != "")
+            <div class="nextpage">(‧_‧？) </div>
+            @endif
+        @endif
+        @if($blogs->previousPageUrl() != "")
+            <div class="prepage"><a href="{{$blogs->previousPageUrl()}}"><span class="genericon genericon-leftarrow"></span>上一页</a></div>
+        @else
+            @if($blogs->nextPageUrl() != "")
+                <div class="prepage">(‧_‧？) </div>
+            @endif
+        @endif
     </div>
     <footer class="footer" style="background:#fff;padding:2.5454% 9.0909%;">
         <span>
@@ -63,6 +83,6 @@
         <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <a href="/">&nbsp;<span style="line-height:16px;">蠢羊小站</span></a>
         </span>
-    </footer><!-- .entry-footer -->
+    </footer> <!-- .entry-footer -->
 </div>
 @endsection

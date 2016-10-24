@@ -6,6 +6,7 @@
         <div class="panel-body">
             <form class="form-horizontal" role="form" method="POST" action="{{ url('/blog/add') }}">
                 {{ csrf_field() }}
+                <input type="hidden" name="rtoken" value="{{$rtoken}}">
                 <div class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">
                     <label for="title" class="col-md-3 control-label">标题</label>
                     <div class="col-md-7">

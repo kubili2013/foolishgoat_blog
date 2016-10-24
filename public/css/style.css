@@ -177,7 +177,7 @@ h3{
     .article{
         background-color: #ffffff;
         box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
-        margin: 3.8% 7.6923%;
+        margin: 3.8% 5.69%;
         padding-top:4.6923%;
         position: relative;
         display: block;
@@ -246,25 +246,32 @@ h3{
     }
 
     .footer{
-        margin: 3.8% 7.6923%;
+        margin: 3.8% 5.69%;
     }
 
     .page-switch{
-        padding: 0 9.0909%;
+        background:#2e2256;
+        margin: 3.8% 5.69%;
         line-height: 1.5;
+        font-size:1.4rem;
+        text-align: center;
         display: block;
     }
     .page-switch a{
+        line-height:66px;
+        color: #aaa;
+    }
+    .page-switch a:hover{
         color: #eee;
     }
     .page-switch span{
         margin:0 10px;
         line-height: 66px;
-        font-size:1.8rem ;
+        font-size:1.4rem ;
     }
     .nextpage{
         float: right;
-        font-size: 1.6rem;
+        font-size: 1.2rem;
         line-height: 66px;
         width:45%;
         color: #eee;
@@ -274,7 +281,7 @@ h3{
     }
     .prepage{
         float: left;
-        font-size: 1.6rem;
+        font-size: 1.2rem;
         line-height: 66px;
         width:45%;
         color: #eee;
@@ -285,6 +292,9 @@ h3{
 }
 
 @media screen and (max-width: 59.6875em){
+    body{
+        background:#eee;
+    }
     .sidebar {
         background-color:#2e2256;
         width: 100%;
@@ -433,32 +443,38 @@ h3{
 
 
     .page-switch{
+        background:#2e2256;
         padding: 0;
+        text-align: center;
         line-height: 1.5;
         display: block;
+        font-size:1.4rem;
     }
     .page-switch a{
-
+        line-height:66px;
+        color: #eee;
+    }
+    .page-switch a:hover{
         color: #eee;
     }
     .page-switch span{
-        line-height: 66px;
+        line-height:66px;
         margin:0 10px;
-        font-size:1.8rem ;
+        font-size:1.4rem ;
     }
     .nextpage{
         float: right;
-        font-size: 1.6rem;
+        font-size: 1.2rem;
         line-height: 66px;
         width:50%;
         color: #eee;
-        background:#2e2256;
+
         text-align: center;
         font-weight: 900;
     }
     .prepage{
         float: left;
-        font-size: 1.6rem;
+        font-size: 1.2rem;
         line-height: 66px;
         width:50%;
         color: #eee;

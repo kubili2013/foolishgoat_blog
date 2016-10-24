@@ -14,18 +14,54 @@
   font-size: 16px;
   line-height: 1.5;
   word-wrap: break-word;
+  padding: 0 3.0% 2.0% 3.0%;
 }
 
 @media screen and (min-width: 59.6875em){
-  .markdown-body{
+  .artical-body{
+    background-color: #ffffff;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
     margin: 3.8% 5.69%;
-    padding:30px;
+    padding-top:2.6923%;
+    position: relative;
+    display: block;
+  }
+
+  .artical-body footer{
+    background-color: #f1f1f1;
+    color: rgba( 46, 34, 86, 0.7);
+    font-size: 1.2rem;
+    padding: 2.5454% 4.2%;
+    line-height: 1.5;
+    display: block;
+  }
+
+  .artical-body .genericon{
+    font-size: 1.8rem;
+    margin:0 0 0 25px;
   }
 }
 
 @media screen and (max-width: 59.6875em){
-  .markdown-body{
-    padding:30px;
+  .artical-body{
+    background-color: #ffffff;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
+    margin:0;
+    padding-top:4.6923%;
+    position: relative;
+    display: block;
+  }
+  .artical-body footer{
+    background-color: #f1f1f1;
+    color: rgba( 46, 34, 86, 0.7);
+    font-size: 1.0rem;
+    padding: 2.5454% 4.2%;
+    line-height: 1.5;
+    display: block;
+  }
+  .artical-body .genericon{
+    font-size: 1.4rem;
+    margin:0 2px 0 8px;
   }
 }
 .markdown-body .pl-c {

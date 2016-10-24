@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -86,9 +87,6 @@
                             写文章
                         </a>
                         <a href="/blog/list" class="list-group-item {{ Request::path() == 'blog/list' ? 'active' : '' }}">文章列表</a>
-                        <a href="/dustbin/list" class="list-group-item {{ Request::path() == 'dustbin/list' ? 'active' : '' }}">
-                            垃圾箱
-                        </a>
                     </div>
                 </div>
                 <div class="col-md-9">

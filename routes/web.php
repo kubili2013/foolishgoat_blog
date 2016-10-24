@@ -24,6 +24,9 @@ Route::group(['middleware' => 'auth'], function (){
     Route::get('blog/delete/{id}', 'BlogController@deteleById')->where('id', '[0-9]+');
     Route::get('blog/edit/{id}', 'BlogController@toEdit')->where('id', '[0-9]+');
     Route::post('blog/edit', 'BlogController@edit');
+
+
+    Route::get('build/index','HomeController@build');
 });
 /**
  * 前台页面展示
@@ -32,4 +35,4 @@ Route::get('/', 'WelcomeController@index');
 
 Route::get('/type/{id}', 'WelcomeController@type');
 
-Route::get('blog/view/{id}', 'BlogController@view')->where('id','[0-9]+');
+Route::get('view/{id}', 'BlogController@view')->where('id','[0-9]+');

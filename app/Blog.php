@@ -23,7 +23,7 @@ class Blog extends Model
         return $this->hasOne('App\User','id');
     }
 
-    public function type(){
+    public function dictionary(){
         return $this->hasOne('App\Dictionary','id');
     }
 }

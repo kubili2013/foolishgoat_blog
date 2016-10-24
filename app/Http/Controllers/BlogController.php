@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Blog;
 use App\BlogContent;
+use App\BlogRead;
 use App\Dictionary;
 use App\Dustbin;
 use App\Keywords;
@@ -122,9 +123,9 @@ class BlogController extends Controller
      */
     public function deteleById($id)
     {   $blog = Blog::find($id);
-        Dustbin::create(["content"=>$blog->content]);
-        $blog->delete();
-        return view("blog.success")->with('msg',["type"=>"success","content"=>"文章".$id.",删除成功!",'uri'=>"blog/list"]);
+        $blog ->statu = 9;
+        $blog->save();
+        return view("blog.success")->with('msg',["type"=>"success","content"=>"文章".$id.",移入垃圾箱!",'uri'=>"blog/list"]);
     }
 
     /**
@@ -144,7 +145,6 @@ class BlogController extends Controller
         $dists = Dictionary::where('parent_id', $type->id)->get();
         $tags = Dictionary::where('parent_id', $tag->id)->get();
         $keywords = Keywords::where('bid',$blog->id)->get();
-
         $words = [];
         foreach ($keywords as $word){
             array_push($words,$word->did);
@@ -221,9 +221,29 @@ class BlogController extends Controller
 
     }
 
-    public function view($id)
+    public function view($id,Request $request)
     {
         $blog = Blog::find($id);
-        return view('view') -> with('blog',$blog);
+        $br = BlogRead::where('ip',$request->ip())->where('blogid',$id)->get();
+        if(count($br) <= 0){
+            BlogRead::create([
+                'ip'=>$request->ip(),
+                'blogid'=>$id,
+            ]);
+            $blog->amount = $blog->amount + 1;
+            $blog->save();
+        }
+        $preBlog = Blog::where("id","<",$blog->id)
+            ->where('statu',1)
+            ->where('type',$blog->type)
+            ->orderBy('id', 'desc')->first();
+        $nextBlog = Blog::where("id",">",$blog->id)
+            ->where('statu',1)
+            ->where('type',$blog->type)
+            ->orderBy('id', 'asc')->first();
+        return view('view')
+            -> with('blog',$blog)
+            -> with('preBlog',$preBlog)
+            -> with('nextBlog',$nextBlog);
     }
 }
