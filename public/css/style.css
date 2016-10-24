@@ -347,6 +347,7 @@ h3{
         color:rgb(228, 221, 180);
     }
 
+
     .fieldcontainer{
         margin:0 auto;
         width:366px;
@@ -465,4 +466,14 @@ h3{
         text-align: center;
         font-weight: 900;
     }
+}
+
+.menu .active{
+    display:list-item;
+    border-bottom:2px solid #777777;
+    color:rgb(228, 221, 180);
+}
+
+.menu .active>a{
+    color:rgb(228, 221, 180);
 }

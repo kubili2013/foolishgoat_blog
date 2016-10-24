@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTableDustbin extends Migration
+class CreateBlogContent extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,10 @@ class CreateTableDustbin extends Migration
      */
     public function up()
     {
-        Schema::create('dustbin', function (Blueprint $table) {
+        Schema::create('blog_content', function (Blueprint $table) {
             $table->increments('id');
             $table->text('content');
+            $table->text('mdcontent')->nullable();
             $table->timestamps();
         });
     }
@@ -27,6 +28,6 @@ class CreateTableDustbin extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('dustbin');
+        Schema::dropIfExists('blog_content');
     }
 }

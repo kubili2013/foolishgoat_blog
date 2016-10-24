@@ -4,10 +4,11 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Dustbin extends Model
+class Keywords extends Model
 {
+    //
+    protected $table='keywords';
     protected $fillable = [
-        'content'
+        'bid','did','type'
     ];
-protected $table='Dustbin';
 }
