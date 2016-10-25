@@ -28,7 +28,7 @@
             </header><!-- .entry-header -->
 
             <div class="article-content">
-                <p>{{$blog['introduction']}}</p>
+                <p>{!! $blog['introduction'] !!}</p>
                 <p>
                     <a href="{{url('view/'.$blog['id'])}}" class="">继续阅读</a>
                 </p>

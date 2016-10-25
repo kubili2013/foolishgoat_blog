@@ -17,7 +17,7 @@
     @endif
     <div class="artical-body" >
         <div class="markdown-body" >
-            {{$blog->blogContent->content}}
+            {!! $blog->blogContent->content !!}
         </div>
         <footer class="">
             <span class="">

@@ -160,12 +160,12 @@ h3{
         border-bottom:none;
     }
     .menu li>a{
-        font-size:20px;
+        font-size:16px;
         line-height:48px;
         color:#eee;
     }
     .menu li>a:hover{
-        font-size:22px;
+        font-size:18px;
         color:rgb(228, 221, 180);
     }
 
@@ -231,13 +231,14 @@ h3{
     .article footer{
         background-color: #f1f1f1;
         color: rgba( 46, 34, 86, 0.7);
-        font-size: 1.2rem;
-        padding: 2.5454% 9.0909%;
-        line-height: 1.5;
+        font-size: 16px;
+        padding: 1.0% 7.2%;
+        line-height: 50px;
         display: block;
     }
     .article .genericon{
-        font-size: 1.8rem;
+        font-size: 20px;
+        line-height: 50px;
         margin:0 0 0 25px;
     }
 
@@ -252,13 +253,13 @@ h3{
     .page-switch{
         background:#2e2256;
         margin: 3.8% 5.69%;
-        line-height: 1.5;
-        font-size:1.4rem;
+        line-height: 50px;
+        font-size:16px;
         text-align: center;
         display: block;
     }
     .page-switch a{
-        line-height:66px;
+        line-height:50px;
         color: #aaa;
     }
     .page-switch a:hover{
@@ -266,13 +267,13 @@ h3{
     }
     .page-switch span{
         margin:0 10px;
-        line-height: 66px;
-        font-size:1.4rem ;
+        line-height: 50px;
+        font-size:20px ;
     }
     .nextpage{
         float: right;
-        font-size: 1.2rem;
-        line-height: 66px;
+        font-size: 16px;
+        line-height: 50px;
         width:45%;
         color: #eee;
         background:#2e2256;
@@ -281,8 +282,8 @@ h3{
     }
     .prepage{
         float: left;
-        font-size: 1.2rem;
-        line-height: 66px;
+        font-size: 16px;
+        line-height: 50px;
         width:45%;
         color: #eee;
         background:#2e2256;
@@ -344,7 +345,7 @@ h3{
     }
 
     .menu li>a{
-        font-size:20px;
+        font-size:16px;
         line-height:48px;
         color:#eee;
     }
@@ -354,6 +355,7 @@ h3{
     }
 
     .menu li>a:hover{
+        font-size:18px;
         color:rgb(228, 221, 180);
     }
 
@@ -425,13 +427,14 @@ h3{
     .article footer{
         background-color: #f1f1f1;
         color: rgba( 46, 34, 86, 0.7);
-        font-size: 1.0rem;
-        padding: 2.5454% 9.0909%;
-        line-height: 1.5;
+        font-size: 16px;
+        padding: 1.0% 7.2%;
+        line-height: 50px;
         display: block;
     }
     .article .genericon{
-        font-size: 1.4rem;
+        font-size: 20px;
+        line-height: 50px;
         margin:0 2px 0 8px;
     }
     .article-content video,.article-content img{
@@ -446,26 +449,26 @@ h3{
         background:#2e2256;
         padding: 0;
         text-align: center;
-        line-height: 1.5;
+        line-height: 50px;
         display: block;
-        font-size:1.4rem;
+        font-size:16px;
     }
     .page-switch a{
-        line-height:66px;
+        line-height:50px;
         color: #eee;
     }
     .page-switch a:hover{
         color: #eee;
     }
     .page-switch span{
-        line-height:66px;
+        line-height:50px;
         margin:0 10px;
-        font-size:1.4rem ;
+        font-size:20px;
     }
     .nextpage{
         float: right;
-        font-size: 1.2rem;
-        line-height: 66px;
+        font-size: 1.0rem;
+        line-height: 50px;
         width:50%;
         color: #eee;
 
@@ -474,8 +477,8 @@ h3{
     }
     .prepage{
         float: left;
-        font-size: 1.2rem;
-        line-height: 66px;
+        font-size: 1.0rem;
+        line-height: 50px;
         width:50%;
         color: #eee;
         background:#2e2256;
