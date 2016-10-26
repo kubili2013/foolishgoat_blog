@@ -12,7 +12,7 @@
     </footer>
     @if(isset($preBlog))
         <div class="page-switch">
-            <a href="{{url('view/'.$preBlog->id)}}">上一篇:{{ $preBlog->title}}</a>
+            <a href="{{url('/view/'.$preBlog->id)}}">上一篇:{{ $preBlog->title}}</a>
         </div>
     @endif
     <div class="artical-body" >
@@ -44,7 +44,7 @@
     </div>
     @if(isset($nextBlog))
         <div class="page-switch">
-            <a href="{{url('view/'.$nextBlog->id)}}">下一篇:{{$nextBlog->title}}</a>
+            <a href="{{url('/view/'.$nextBlog->id)}}">下一篇:{{$nextBlog->title}}</a>
         </div>
     @endif
 

@@ -36,8 +36,8 @@
                 <td width="25%">
                     <div class="btn-group btn-group-sm">
                     {{--<a href="{{url("blog/view/".$blog->id)}}" class="btn btn-primary" style=""><span class="genericon genericon-search"></span></a>--}}
-                    <a href="{{url("blog/edit/".$blog->id)}}" class="btn btn-primary"><span class="genericon genericon-edit"></span></a>
-                    <a href="{{url("blog/delete/".$blog->id)}}" class="btn btn-primary"><span class="genericon genericon-close"></span></a>
+                    <a href="{{url("/blog/edit/".$blog->id)}}" class="btn btn-primary"><span class="genericon genericon-edit"></span></a>
+                    <a href="{{url("/blog/delete/".$blog->id)}}" class="btn btn-primary"><span class="genericon genericon-close"></span></a>
                     </div>
                 </td>
             </tr>

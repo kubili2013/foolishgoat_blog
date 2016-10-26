@@ -23,14 +23,14 @@
         <article  class="article">
             <header class="">
                 <h2 class="">
-                    <a href="{{url('view/'.$blog['id'])}}" rel="bookmark">{{$blog['title']}}</a>
+                    <a href="{{url('/view/'.$blog['id'])}}" rel="bookmark">{{$blog['title']}}</a>
                 </h2>
             </header><!-- .entry-header -->
 
             <div class="article-content">
                 <p>{!! $blog['introduction'] !!}</p>
                 <p>
-                    <a href="{{url('view/'.$blog['id'])}}" class="">继续阅读</a>
+                    <a href="{{url('/view/'.$blog['id'])}}" class="">继续阅读</a>
                 </p>
             </div><!-- .entry-content -->
 
