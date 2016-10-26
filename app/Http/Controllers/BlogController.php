@@ -46,7 +46,7 @@ class BlogController extends Controller
         //校验rtoken,防止表单重复提交
         if($request->input('rtoken') != $request->session()->get('rtoken')){
             return view("blog.success")
-                -> with('msg',["type"=>"danger","content"=>"新增失败,表单已经过期!",'uri'=>"blog/add"]);
+                -> with('msg',["type"=>"danger","content"=>"新增失败,表单已经过期!",'uri'=>"/blog/add"]);
         }
         $data = $request->all();
         //表单数据校验
@@ -60,7 +60,7 @@ class BlogController extends Controller
         ]);
         if ($validator->fails()) {
             //校验失败,返回
-            return redirect("blog/add")->withErrors($validator)
+            return redirect("/blog/add")->withErrors($validator)
                 ->withInput();
         }
         $user = Auth::user();
@@ -95,7 +95,7 @@ class BlogController extends Controller
         }
         //重新生成rtoken,防止表单重复提交
         $request->session()->put('rtoken',str_random(40));
-        return view("blog.success")->with('msg',["type"=>"success","content"=>"文章《".$data['title']."》,新增成功!",'uri'=>"blog/add"]);
+        return view("blog.success")->with('msg',["type"=>"success","content"=>"文章《".$data['title']."》,新增成功!",'uri'=>"/blog/add"]);
     }
 
     /**
@@ -125,7 +125,7 @@ class BlogController extends Controller
     {   $blog = Blog::find($id);
         $blog ->statu = 9;
         $blog->save();
-        return view("blog.success")->with('msg',["type"=>"success","content"=>"文章".$id.",移入垃圾箱!",'uri'=>"blog/list"]);
+        return view("blog.success")->with('msg',["type"=>"success","content"=>"文章".$id.",移入垃圾箱!",'uri'=>"/blog/list"]);
     }
 
     /**
@@ -170,7 +170,7 @@ class BlogController extends Controller
         //校验rtoken,防止表单重复提交
         if($request->input('rtoken') != $request->session()->get('rtoken')){
             return view("blog.success")
-                -> with('msg',["type"=>"danger","content"=>"修改失败,表单已经过期!",'uri'=>"blog/add"]);
+                -> with('msg',["type"=>"danger","content"=>"修改失败,表单已经过期!",'uri'=>"/blog/add"]);
         }
         $data = $request->all();
         //表单数据校验
@@ -185,7 +185,7 @@ class BlogController extends Controller
         ]);
         if ($validator->fails()) {
             //校验失败,返回
-            return redirect("blog/edit/".$data['id'])
+            return redirect("/blog/edit/".$data['id'])
                 ->withErrors($validator)
                 ->withInput();
         }
@@ -216,7 +216,7 @@ class BlogController extends Controller
         //重新生成rtoken,防止表单重复提交
         $request->session()->put('rtoken',str_random(40));
         return view("blog.success")
-            ->with('msg',["type"=>"success","content"=>"文章《".$data['title']."》,修改成功!",'uri'=>"blog/list"]);
+            ->with('msg',["type"=>"success","content"=>"文章《".$data['title']."》,修改成功!",'uri'=>"/blog/list"]);
 
 
     }
