@@ -4,6 +4,8 @@
 
     <meta charset="utf-8">
     <link rel="shortcut icon" href="/favicon.ico" />
+    <meta name="Keywords" content="个人博客 匠心 匠心博客 FoolishGoat foolishgoat 蠢羊博客 技术博客 laravel java ionic">
+    <meta name="description" content="匠心的博客是独自开发的个人技术博客,分享视频,分享技术!">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 

@@ -7,7 +7,8 @@
         ?>
         <meta charset="utf-8">
         <link rel="shortcut icon" href="/favicon.ico" />
-        <meta content="">
+        <meta name="Keywords" content="个人博客 匠心 匠心博客 FoolishGoat foolishgoat 蠢羊博客 技术博客 laravel java ionic">
+        <meta name="description" content="匠心的博客是独自开发的个人技术博客,分享视频,分享技术!">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="{{url('/css/style.css')}}">
@@ -16,7 +17,7 @@
         <link rel="stylesheet" href="{{url('/css/github-markdown.css')}}">
         {{-- cdn引入jquery --}}
         <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
-        <title>蠢羊小站</title>
+        <title>蠢羊小站 - 匠心的博客</title>
     </head>
     <body onmousemove="removeLogoEyes(event);">
         <div class="sidebar clearfloat">
