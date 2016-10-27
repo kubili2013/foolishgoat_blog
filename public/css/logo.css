@@ -1,6 +1,6 @@
 /** css3 绘制动画效果的 LOGO **/
 .logo{
-    font-size:1%;
+    font-size:12px;
     position:relative;
     /* safari 浏览器  em单位不能撑起div 原因未知 */
     width:93px;
