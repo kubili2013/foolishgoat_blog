@@ -29,7 +29,7 @@
             <span class="">
                 <span class="author vcard">
                     <span class="genericon genericon-user"></span>
-                    <a class="url fn n" href="/author"><?php $user = \App\User::find($blog['author']); echo $user->name?></a>
+                    <span><?php $user = \App\User::find($blog['author']); echo $user->name?></span>
                 </span>
             </span>
             <span class="">
