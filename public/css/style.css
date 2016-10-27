@@ -19,14 +19,13 @@ body{
 /** 清除浮动 */
 .clearfloat:after{display:block;clear:both;content:"";visibility:hidden;height:0}
 .clearfloat{zoom:1}
-h1{
-    font-size:25px;
-    line-height:1;
-}
-h3{
-    font-size:16px;
-    line-height:1;
-}
+h1 { font-size: 2.4em; font-weight: 300; }
+h2 { font-size: 1.8em; font-weight: 400; }
+h3 { font-size: 1.5em; font-weight: 500; }
+h4 { font-size: 1.2em; font-weight: 600; }
+h5 { font-size: 1.1em; font-weight: 600; }
+h6 { font-size: 1em; font-weight: 600; }
+a { color: rgb(51, 122, 183); }
 
 /*.sidebar{*/
     /*background: -webkit-linear-gradient(left,#42356f 0,#2e2256 100%);*/
@@ -91,7 +90,6 @@ h3{
 }
 
 .footer{
-    background-color: #f1f1f1;
     color: rgb(21, 11, 4);
     font-size: 1.0rem;
     padding: 2.5454% 9.0909%;
@@ -139,7 +137,6 @@ h3{
     .container{
         float: right;
         width:70%;
-        background: #2e2256;
     }
     .menu{
         float:right;
@@ -170,11 +167,11 @@ h3{
 
 
     .content{
-        background:rgb(228, 221, 180);
         padding:20px;
     }
     .article{
-        background-color: #ffffff;
+        color: #eee;
+        background-color: rgb(40, 44, 52);
         box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
         margin: 3.8% 5.69%;
         padding-top:4.6923%;
@@ -259,10 +256,10 @@ h3{
     }
     .page-switch a{
         line-height:50px;
-        color: #aaa;
+        color: #eee;
     }
     .page-switch a:hover{
-        color: #eee;
+        color: #aaa;
     }
     .page-switch span{
         margin:0 10px;
@@ -289,12 +286,39 @@ h3{
         text-align: center;
         font-weight: 900;
     }
+
+
+    .artical-body{
+        background-color: #ffffff;
+        box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
+        margin: 3.8% 5.69%;
+        position: relative;
+        display: block;
+    }
+
+    .artical-body footer{
+        background-color: #3F434B;
+        color: rgba( 46, 34, 86, 0.7);
+        font-size: 1.2rem;
+        padding: 2.5454% 4.2%;
+        line-height: 1.5;
+        display: block;
+        color: #eee;
+    }
+
+    .artical-body .genericon{
+        font-size: 1.8rem;
+        margin:0 0 0 25px;
+        color: #eee;
+    }
+
+    .footer{
+        background-color: #f1f1f1;
+    }
 }
 
 @media screen and (max-width: 59.6875em){
-    body{
-        background:#eee;
-    }
+
     .sidebar {
         background-color:#2e2256;
         width: 100%;
@@ -370,7 +394,8 @@ h3{
     }
 
     .article{
-        background-color: #ffffff;
+        background-color: rgb(40, 44, 52);
+        color: #eee;
         box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
         margin:0;
         padding-top:4.6923%;
@@ -457,7 +482,7 @@ h3{
         color: #eee;
     }
     .page-switch a:hover{
-        color: #eee;
+        color: #aaa;
     }
     .page-switch span{
         line-height:50px;
@@ -483,6 +508,33 @@ h3{
         background:#2e2256;
         text-align: center;
         font-weight: 900;
+    }
+
+    .artical-body{
+        box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
+        margin:0;
+        position: relative;
+        display: block;
+    }
+    .artical-body footer{
+        background-color: #3F434B;
+        color: rgba( 46, 34, 86, 0.7);
+        font-size: 1.0rem;
+        padding: 2.5454% 4.2%;
+        line-height: 1.5;
+        display: block;
+        color: #eee;
+    }
+    .artical-body .genericon{
+        font-size: 1.4rem;
+        margin:0 2px 0 8px;
+        color: #eee;
+    }
+
+
+    .footer{
+        background:rgb(228, 221, 180);
+        padding:2.5454% 9.0909%;
     }
 }
 

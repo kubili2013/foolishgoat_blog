@@ -13,8 +13,8 @@
     @if(count($blogs) < 1)
         <article  class="footer">
             <header class="">
-                <h2 class="">
-                    （*+﹏+*）!! 暂时没有啥可看的!<br/>
+                <h2 style="text-align: center;">
+                    （*+﹏+*）!! <br/>暂时没有啥可看的!<br/>
                 </h2>
             </header>
         </article>
@@ -75,7 +75,7 @@
             @endif
         @endif
     </div>
-    <footer class="footer" style="background:#fff;padding:2.5454% 9.0909%;">
+    <footer class="footer">
         <span>
             <a href="http://www.miitbeian.gov.cn/" rel="nofollow" title="工业和信息化部ICP/IP地址/域名信息备案管理系统">粤ICP备16055652-2</a>
         </span>

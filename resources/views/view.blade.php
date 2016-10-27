@@ -16,7 +16,7 @@
         </div>
     @endif
     <div class="artical-body" >
-        <div class="markdown-body" >
+        <div class="markdown-preview" >
             {!! $blog->blogContent->content !!}
         </div>
         <footer class="">
@@ -48,7 +48,7 @@
         </div>
     @endif
 
-    <footer class="footer" style="background:#fff;padding:2.5454% 9.0909%;">
+    <footer class="footer">
         <span>
             <a href="http://www.miitbeian.gov.cn/" rel="nofollow" title="工业和信息化部ICP/IP地址/域名信息备案管理系统">粤ICP备16055652-2</a>
         </span>

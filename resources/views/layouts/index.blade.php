@@ -14,7 +14,7 @@
         <link rel="stylesheet" href="/css/style.css">
         <link rel="stylesheet" href="/css/genericons.css">
         <link rel="stylesheet" href="/css/logo.css">
-        <link rel="stylesheet" href="/css/github-markdown.css">
+            <link rel="stylesheet" href="/css/code.css">
         {{-- cdn引入jquery --}}
         <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
             <script src="/js/index.js"></script>
@@ -35,7 +35,7 @@
                     <div id="right_nostril" class="right-nostril" ></div>
                     <div style="clear:both"></div>
                 </div>
-                <div CLASS="site-name"><h1>蠢羊小站</h1><h3>匠心的博客</h3></div>
+                <div CLASS="site-name"><h2>蠢羊小站</h2><h4>匠心的博客</h4></div>
                 <button class="nav-btn" onclick="menuCollspan();"><span class="genericon genericon-menu"></span></button>
             </header>
             <nav class="menu" id="menu">
