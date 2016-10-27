@@ -1,5 +1,4 @@
-body, ul, li, p, form, dl, dt, dd ,div{ margin: 0px; padding: 0px;
-    font-size: 12px; font-weight: normal; }
+body, ul, li, p, form, dl, dt, dd ,div{ margin: 0px; padding: 0px; font-weight: normal; }
 ul { list-style: none; }
 img { border-style: none; }
 
@@ -21,7 +20,7 @@ body{
 .clearfloat:after{display:block;clear:both;content:"";visibility:hidden;height:0}
 .clearfloat{zoom:1}
 h1{
-    font-size:30px;
+    font-size:25px;
     line-height:1;
 }
 h3{
@@ -192,7 +191,7 @@ h3{
     }
     .article header>h2{
         clear: both;
-        font-size: 2.4rem;
+        font-size: 2.0rem;
         font-weight: 700;
         border: 0;
         font-family: inherit;
@@ -388,7 +387,7 @@ h3{
     }
     .article header>h2{
         clear: both;
-        font-size: 1.8rem;
+        font-size: 1.6rem;
         font-weight: 700;
         border: 0;
         font-family: inherit;
