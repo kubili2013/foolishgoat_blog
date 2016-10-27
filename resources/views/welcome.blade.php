@@ -11,10 +11,10 @@
         </div>
     </footer>
     @if(count($blogs) < 1)
-        <article  class="footer">
+        <article  class="article">
             <header class="">
                 <h2 style="text-align: center;">
-                    （*+﹏+*）!! <br/>暂时没有啥可看的!<br/>
+                    （*+﹏+*）!! <br/>暂时没有啥可看的!<br/><br/>
                 </h2>
             </header>
         </article>
