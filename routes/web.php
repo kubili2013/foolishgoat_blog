@@ -36,3 +36,14 @@ Route::get('/', 'WelcomeController@index');
 Route::get('/type/{id}', 'WelcomeController@type');
 
 Route::get('view/{id}', 'BlogController@view')->where('id','[0-9]+');
+
+Route::get('/blog/{id}/content', 'BlogController@getContent')
+    ->where('id','[0-9]+');
+Route::get('/add/comment/{id}', 'CommentController@create')
+    ->middleware('throttle')
+    ->where('id','[0-9]+');
+Route::get('/blog/{id}/comments', 'CommentController@getCommentByBlog')
+    ->middleware('throttle')
+    ->where('id','[0-9]+');
+
+

@@ -1,15 +1,7 @@
 @extends('layouts.index')
 
 @section('content')
-<div class="content">
-    <footer class="footer clearfloat">
-        <div class="fieldcontainer">
-            <form action="{{url('/')}}" method="get">
-                <input type="text" name="str" id="str" class="searchfield" placeholder="Keywords..." value="{{ isset($str)?$str:"" }}" tabindex="1">
-                <button class="searchbtn" type="submit"><span class="genericon genericon-search"></span></button>
-            </form>
-        </div>
-    </footer>
+
     @if(count($blogs) < 1)
         <article  class="article">
             <header class="">
@@ -28,7 +20,7 @@
             </header><!-- .entry-header -->
 
             <div class="article-content">
-                <p>{!! $blog['introduction'] !!}</p>
+                <p class="markdown-body" style="padding:10px 5px;">{!! $blog['introduction'] !!}</p>
                 <p>
                     <a href="{{url('/view/'.$blog['id'])}}" class="">继续阅读</a>
                 </p>
@@ -49,7 +41,7 @@
             </span>
                 <span class="">
                 <span class="genericon genericon-tag"></span>
-                <a href="type/<?php $type = \App\Dictionary::find($blog['type']); echo $type->id; ?>" rel="category tag"><?php echo $type->word; ?></a>
+                <a href="/type/<?php $type = \App\Dictionary::find($blog['type']); echo $type->id; ?>" rel="category tag"><?php echo $type->word; ?></a>
             </span>
                 <span class="">
                 <span class="genericon genericon-star"></span>
@@ -75,14 +67,14 @@
             @endif
         @endif
     </div>
-    <footer class="footer">
-        <span>
-            <a href="http://www.miitbeian.gov.cn/" rel="nofollow" title="工业和信息化部ICP/IP地址/域名信息备案管理系统">粤ICP备16055652-2</a>
-        </span>
 
-        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="/">&nbsp;<span style="line-height:16px;">蠢羊小站</span></a>
-        </span>
-    </footer> <!-- .entry-footer -->
-</div>
+<script type="application/javascript">
+    $(function(){
+        // 将所有md文本转化为body
+        var converter = new showdown.Converter();
+        $('.markdown-body').each(function(i, block) {
+            $(this).html(converter.makeHtml($(this).html()));
+        });
+    });
+</script>
 @endsection

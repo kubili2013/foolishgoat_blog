@@ -49,11 +49,7 @@
                     <label for="keywords" class="col-md-3 control-label">关键词</label>
 
                     <div class="col-md-7">
-                        @foreach($keywords as $word)
-                            <label class="checkbox-inline">
-                                <input type="checkbox" name="keywords[]" value="{{$word->id}}" {{in_array($word->id ,is_array(old('keywords'))?old('keywords'):[])?"checked":""}}> {{$word->word}}
-                            </label>
-                        @endforeach
+                        <input id="imgurl" type="text" class="form-control" name="keywords" value="{{ old('keywords') }}" autofocus>
                         @if ($errors->has('keywords'))
                             <span class="help-block">
                                         <strong>{{ $errors->first('keywords') }}</strong>

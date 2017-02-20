@@ -32,9 +32,7 @@ class BlogController extends Controller
         return view("blog.add")
             ->with('rtoken',$request->session()->get('rtoken'))
             // 前端页面需要数据字典中type类型数据
-            ->with('dists',$dists)
-            // 前端页面需要数据字典中所有标签数据
-            ->with('keywords',$tags);
+            ->with('dists',$dists);
     }
 
     /**
@@ -52,7 +50,7 @@ class BlogController extends Controller
         //表单数据校验
         $validator = Validator::make($data,[
             'title' => 'required|max:64',
-            'keywords' => 'required',
+            'keywords' => 'required|max:255',
             'type' => 'required|numeric|max:10',
             'content' => 'required',
             'introduction' => 'required|max:255',
@@ -82,17 +80,10 @@ class BlogController extends Controller
             // 大图地址 可空
             'imgurl' =>$data['imgurl'],
             'iszz' =>$data['iszz'],
+            'keywords' =>$data['keywords'],
             // 外键关联用户
             'author' =>$user->id,
         ]);
-        // 关键词 多对多存储
-        foreach($data['keywords'] as $value){
-            Keywords::create([
-                'bid' => $blog->id,
-                'did' => $value,
-                'type' => 0,
-            ]);
-        }
         //重新生成rtoken,防止表单重复提交
         $request->session()->put('rtoken',str_random(40));
         return view("blog.success")->with('msg',["type"=>"success","content"=>"文章《".$data['title']."》,新增成功!",'uri'=>"/blog/add"]);
@@ -141,23 +132,13 @@ class BlogController extends Controller
         $blogc = $blog->blogContent;
         // 查找数据字典数据
         $type = Dictionary::where('code', 'type')->first();
-        $tag = Dictionary::where('code', 'tag')->first();
         $dists = Dictionary::where('parent_id', $type->id)->get();
-        $tags = Dictionary::where('parent_id', $tag->id)->get();
-        $keywords = Keywords::where('bid',$blog->id)->get();
-        $words = [];
-        foreach ($keywords as $word){
-            array_push($words,$word->did);
-        }
         return view("blog.edit")
             -> with('blog',$blog)
             -> with('content',$blogc->content)
             -> with('rtoken',$request->session()->get('rtoken'))
-            -> with('words',$words)
             // 前端页面需要数据字典中type类型数据
-            -> with('dists',$dists)
-            // 前端页面需要数据字典中所有标签数据
-            -> with('keywords',$tags);
+            -> with('dists',$dists);
     }
 
     /**
@@ -177,7 +158,7 @@ class BlogController extends Controller
         $validator = Validator::make($data,[
             'id' => 'required|numeric',
             'title' => 'required|max:64',
-            'keywords' => 'required',
+            'keywords' => 'required|max:255',
             'type' => 'required|numeric|max:10',
             'content' => 'required',
             'introduction' => 'required|max:255',
@@ -199,20 +180,12 @@ class BlogController extends Controller
         $blog -> type = $data['type'];
         $blog -> title = $data['title'];
         $blog -> introduction = $data['introduction'];
+        $blog -> keywords = $data['keywords'];
         $blog -> statu = $data['statu'];
         $blog -> imgurl = $data['imgurl'];
         $blog -> iszz = $data['iszz'];
         $blog -> save();
-        // 先删除之前存储的 keywords 然后重新新增
-        Keywords::where('bid',$blog->id)->delete();
-        // 关键词 多对多存储
-        foreach($data['keywords'] as $value){
-            Keywords::create([
-                'bid' => $blog->id,
-                'did' => $value,
-                'type' => 0,
-            ]);
-        }
+
         //重新生成rtoken,防止表单重复提交
         $request->session()->put('rtoken',str_random(40));
         return view("blog.success")
@@ -245,5 +218,11 @@ class BlogController extends Controller
             -> with('blog',$blog)
             -> with('preBlog',$preBlog)
             -> with('nextBlog',$nextBlog);
+    }
+
+    public function getContent($id)
+    {
+        $blog = Blog::find($id);
+        return ['content'=>$blog->blogContent->content];
     }
 }
