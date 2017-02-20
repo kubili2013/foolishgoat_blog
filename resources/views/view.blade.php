@@ -76,11 +76,7 @@
                 </form>
             </div>
         </footer>
-        @if(isset($preBlog))
-            <div class="page-switch">
-                <a href="{{url('/view/'.$preBlog->id)}}">上一篇:{{ $preBlog->title}}</a>
-            </div>
-        @endif
+
         <div class="artical-body">
             <div class="markdown-body" id="blog_content" >
             </div>
@@ -107,6 +103,11 @@
             </span>
             </footer>
         </div>
+        @if(isset($preBlog))
+            <div class="page-switch">
+                <a href="{{url('/view/'.$preBlog->id)}}">上一篇:{{ $preBlog->title}}</a>
+            </div>
+        @endif
         @if(isset($nextBlog))
             <div class="page-switch">
                 <a href="{{url('/view/'.$nextBlog->id)}}">下一篇:{{$nextBlog->title}}</a>
@@ -132,7 +133,7 @@
             </div>
         </footer>
 
-        <footer class="footer">
+        <footer class="footer footer-padding">
         <span>
             <a href="http://www.miitbeian.gov.cn/" rel="nofollow" title="工业和信息化部ICP/IP地址/域名信息备案管理系统">粤ICP备16055652-2</a>
         </span>

@@ -173,7 +173,7 @@ a { color: rgb(51, 122, 183); }
     }
     .article{
         color: #eee;
-        background-color:rgb(49, 54, 63);
+        background-color:rgb(40, 44, 52);
         box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
         margin: 3.8% 5.69%;
         padding-top:4.6923%;
@@ -219,7 +219,7 @@ a { color: rgb(51, 122, 183); }
     }
     .article-content p {
         display: block;
-        font-size:1.2rem;
+        font-size:1.0rem;
         -webkit-margin-before: 1em;
         -webkit-margin-after: 1em;
         -webkit-margin-start: 0px;
@@ -546,6 +546,9 @@ a { color: rgb(51, 122, 183); }
         color:rgb(49, 54, 63);
         /*padding:2.5454% 9.0909%;*/
         background-color:#ddd;
+    }
+    .footer-padding{
+        padding:2.5454% 9.0909%;
     }
     .footer-bg{
         background-color:rgb(228, 221, 180);
