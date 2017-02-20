@@ -13,7 +13,7 @@ class CommentController extends Controller
     //
     public function getCommentByBlog($id)
     {
-        $comments = Blog::find($id)->comments()->take(10)->get();
+        $comments = Blog::find($id)->comments()->take(10)->orderBy('created_at', 'desc')->get();
         return ['comments'=>$comments];
     }
 

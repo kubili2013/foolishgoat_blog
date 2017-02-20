@@ -592,7 +592,7 @@ a { color: rgb(51, 122, 183); }
     width: 100%;
 }
 .item-content{
-    padding-left:3.5rem;
+    /*padding-left:3.5rem;*/
     padding-top:0.5rem;
 
 }

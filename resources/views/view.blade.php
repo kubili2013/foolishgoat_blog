@@ -118,15 +118,6 @@
             <div class="comment-list" id="comment_list">
                 <hr/>
                 <h4>无</h4>
-                <div class="comment-item">
-                    <div class="avatar"></div>
-                    <div class="item-detail">
-                        <div><p>李洪彬</p></div>
-                        <div><p>1楼  &middot;  2010-07-01</p></div>
-                        <div class="comment-line"></div>
-                    </div>
-                    <div class="item-content"><p>嘿嘿,不错吆</p></div>
-                </div>
                 <hr/>
 
             </div>
@@ -162,6 +153,30 @@
             }
             return Num;
         }
+        function getComments(){
+            $.get("/blog/{{$blog['id']}}/comments",function(data){
+                debugger;
+                var html="<hr/>";
+                var comments = data.comments;
+                if(comments.length < 1){
+                    html = "<hr/><h4>无</h4><hr/>";
+                }
+                for(var i in comments){
+                    html += '<div class="comment-item" > ' +
+                            '<div class="avatar" style="background:\#'+MathRand6()+';">'+(parseInt(i)+1)+'</div>' +
+                            '<div class="item-detail">' +
+                            '<div><p>&nbsp;'+comments[i].name+'</p></div>' +
+                            '<div><p>&nbsp;'+comments[i].created_at+'</p></div>' +
+                            '<div class="comment-line"></div>' +
+                            '</div>' +
+                            '<div class="item-content"><p>'+comments[i].content+'</p></div>' +
+                            '</div>' +
+                            '<hr/>';
+                }
+                $('#comment_list').html(html);
+
+            });
+        }
         $(function(){
             hljs.tabReplace = '    ';
             hljs.initHighlightingOnLoad();
@@ -173,27 +188,8 @@
                     hljs.highlightBlock(block);
                 });
             });
-            $.get("/blog/{{$blog['id']}}/comments",function(data){
-                debugger;
-                var html="<hr/>";
-                var comments = data.comments;
-                for(var i in comments){
-                    html += '<div class="comment-item" > ' +
-                            '<div class="avatar" style="background:\#'+MathRand6()+';">'+(parseInt(i)+1)+'</div>' +
-                            '<div class="item-detail">' +
-                            '<div><p>'+comments[i].name+'</p></div>' +
-                            '<div><p>'+comments[i].created_at+'</p></div>' +
-                            '<div class="comment-line"></div>' +
-                            '</div>' +
-                            '<div class="item-content"><p>'+comments[i].content+'</p></div>' +
-                            '</div>' +
-                            '<hr/>';
-                }
-                $('#comment_list').html(html);
-
-            });
+            getComments();
             $('#comment_form').submit(function() {
-                debugger;
                 $.ajax({
                     url:'{{url('/add/comment/'.$blog['id'])}}',
                     data:$('#comment_form').serialize(),
@@ -207,6 +203,7 @@
                             $("#msg").html('评论成功!');
                             $("#msg").show(500);
                             setTimeout("$('#msg').hide(500);",10000);
+                            getComments();
                         }else{
                             $("#msg").html(data.msg);
                             $("#msg").show(500);
