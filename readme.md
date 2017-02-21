@@ -9,8 +9,10 @@
 
 1. 新增Blog
 2. 删除Blog
-3. 首页展示Blog
+3. 展示Blog
 4. 支持Markdown文本
+5. SEO优化
+
 
 ## 开源许可
 
