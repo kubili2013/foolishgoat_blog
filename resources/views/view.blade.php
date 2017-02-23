@@ -12,7 +12,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/genericons.css">
-    <link rel="stylesheet" href="/css/logo.css">
+    <link rel="stylesheet" href="/css/logo.css"><!-- 百度站长平台  -->
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?1caafb83252da8c140105744d6863ee3";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
     {{--<link rel="stylesheet" href="/css/code.css">--}}
 <!-- markdown-css -->
     <link rel="stylesheet" href="/css/github-markdown.css">

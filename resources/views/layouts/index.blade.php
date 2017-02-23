@@ -17,7 +17,17 @@
     {{--<link rel="stylesheet" href="/css/code.css">--}}
     <!-- markdown-css -->
     <link rel="stylesheet" href="/css/github-markdown.css">
-    <!-- highlight-code-theme -->
+    <!-- 百度站长平台  -->
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?1caafb83252da8c140105744d6863ee3";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+        <!-- highlight-code-theme -->
     {{--<link rel="alternate stylesheet" title="-Default" href="css/highlight/default.css">--}}
     {{--<link rel="alternate stylesheet" title="Default" href="css/highlight/dark.css">--}}
     {{--<link rel="alternate stylesheet" title="FAR" href="css/highlight/far.css">--}}
