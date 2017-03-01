@@ -13,7 +13,7 @@ body{
     height: 100%;
     margin: 0px;
     padding: 0px;
-    background:rgb(228, 221, 180);
+    background:#A2B4BA;
     position: relative;
 }
 /** 清除浮动 */
@@ -169,6 +169,7 @@ a { color: rgb(51, 122, 183); }
 
 
     .content{
+        max-width: 1024px;
         padding:20px;
     }
     .article{
