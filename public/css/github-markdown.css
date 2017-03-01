@@ -11,7 +11,7 @@
   font-size: 16px;
   line-height: 1.5;
   word-wrap: break-word;
-  padding: 4em 2em;
+  padding: 2em 2em;
   color: rgb(171, 178, 191);
   background-color: rgb(40, 44, 52);
 }
@@ -241,21 +241,25 @@
 .markdown-body h6 {
   margin-top: 0;
   margin-bottom: 0;
+
 }
 
 .markdown-body h1 {
   font-size: 32px;
   font-weight: 600;
+  text-align: center;
 }
 
 .markdown-body h2 {
   font-size: 24px;
   font-weight: 600;
+  text-align: center;
 }
 
 .markdown-body h3 {
   font-size: 20px;
   font-weight: 600;
+  text-align: center;
 }
 
 .markdown-body h4 {

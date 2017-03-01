@@ -76,7 +76,7 @@
 <div class="container">
 
     <div class="content">
-        <footer class="footer clearfloat" style="height:4.0rem;">
+        <footer class="footer " style="height:4.0rem;">
             <div class="fieldcontainer">
                 <form action="{{url('/')}}" method="get">
                     <input type="text" name="str" id="str" class="searchfield" placeholder="Keywords..." value="{{ isset($str)?$str:"" }}" tabindex="1" style="max-width:100%;">
@@ -87,6 +87,11 @@
         </footer>
 
         <div class="artical-body">
+            @if(isset($blog['imgurl']) && $blog['imgurl'] != "")
+                <div class="blog-img">
+                    <img  src="{{$blog['imgurl']}}">
+                </div>
+            @endif
             <div class="markdown-body" id="blog_content" >
             </div>
             <footer class="">
@@ -165,7 +170,6 @@
         }
         function getComments(){
             $.get("/blog/{{$blog['id']}}/comments",function(data){
-                debugger;
                 var html="<hr/>";
                 var comments = data.comments;
                 if(comments.length < 1){

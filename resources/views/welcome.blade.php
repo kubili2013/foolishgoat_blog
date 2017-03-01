@@ -13,6 +13,11 @@
     @endif
     @foreach($blogs as $blog)
         <article  class="article">
+            @if(isset($blog['imgurl']) && $blog['imgurl'] != "")
+                <div class="blog-img">
+                    <img  src="{{$blog['imgurl']}}">
+                </div>
+            @endif
             <header class="">
                 <h2 class="">
                     <a href="{{url('/view/'.$blog['id'])}}" rel="bookmark">{{$blog['title']}}</a>
@@ -20,7 +25,7 @@
             </header><!-- .entry-header -->
 
             <div class="article-content">
-                <p class="markdown-body" style="padding:10px 5px;">{!! $blog['introduction'] !!}</p>
+                <p style="padding:10px 5px;">{!! $blog['introduction'] !!}</p>
                 <p>
                     <a href="{{url('/view/'.$blog['id'])}}" class="">继续阅读</a>
                 </p>
