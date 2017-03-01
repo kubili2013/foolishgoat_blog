@@ -386,7 +386,7 @@
 .markdown-body blockquote {
   padding: 0 1em;
   color: #777;
-  border-left: 0.25em solid #ddd;
+  border-right: 0.25em solid #ddd;
 }
 
 .markdown-body blockquote>:first-child {
