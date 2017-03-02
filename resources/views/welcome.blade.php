@@ -77,6 +77,8 @@
     $(function(){
         // 将所有md文本转化为body
         var converter = new showdown.Converter();
+        // 设置为github解析方式
+        converter.setFlavor('github');
         $('.markdown-body').each(function(i, block) {
             $(this).html(converter.makeHtml($(this).html()));
         });

@@ -195,6 +195,8 @@
             hljs.tabReplace = '    ';
             hljs.initHighlightingOnLoad();
             var converter = new showdown.Converter();
+            // 设置为github解析方式
+            converter.setFlavor('github');
             $.get("/blog/{{$blog['id']}}/content",function(data){
                 $('#blog_content').html(converter.makeHtml(data['content']));
                 //
